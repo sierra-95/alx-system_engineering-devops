@@ -12,7 +12,7 @@ then
     echo good luck
     ((counter++))
 else
-    echo Holberton School
+    echo Best School
     ((counter++))
 fi
 done
