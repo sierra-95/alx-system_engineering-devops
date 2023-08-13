@@ -1,0 +1,33 @@
+To design a secured and monitored three-server web infrastructure hosting www.foobar.com, 
+let's break down the components and their purposes:
+
+1.	Three Servers: The three servers will distribute the load, enhance redundancy, and improve overall system performance.
+2.	Firewalls (3): Firewalls act as a protective barrier between the internet and the servers,
+helping to filter and control incoming and outgoing traffic. They add an additional layer of security to the infrastructure.
+3.	SSL Certificate: An SSL certificate is added to enable HTTPS, which encrypts the data transmitted between the server
+and the user's browser. This ensures secure communication and protects sensitive information.
+4.	Monitoring Clients (3): Monitoring clients are data collectors that continuously observe server performance
+and other critical parameters. They provide real-time insights into the health and performance of the infrastructure.
+
+Specifics:
+1.	Firewalls: Firewalls are added to prevent unauthorized access and protect against potential cyber threats like DDoS
+attacks, malware, and unauthorized access attempts.
+2.	SSL Certificate: Serving traffic over HTTPS ensures that data exchanged between the server and users is encrypted, 
+safeguarding it from eavesdropping and tampering.
+3.	Monitoring: Monitoring is used to track server performance, identify potential issues, and ensure the infrastructure
+operates efficiently. It helps detect anomalies and proactively address potential problems.
+4.	Data Collection: The monitoring tool collects data from various components of the infrastructure,
+including server performance metrics, application logs, and user behavior, to provide actionable insights.
+5.	Monitoring Web Server QPS: To monitor web server QPS (Queries Per Second), you can configure the monitoring tool to
+track incoming request rates and server response times. This helps you identify performance bottlenecks and plan for scaling.
+
+Issues:
+1.	Terminating SSL at the Load Balancer Level: Terminating SSL at the load balancer instead of the web server might
+pose a security risk as data will be unencrypted within the internal network.
+It's recommended to use end-to-end SSL encryption.
+2.	Single MySQL Server for Writes: Having only one MySQL server capable of accepting writes may lead to
+a single point of failure. In the event of a failure, data integrity, and availability could be compromised. 
+Consider implementing a master-slave or master-master replication setup.
+3.	Identical Server Components: Having servers with all the same components can lead to homogeneity,
+which may increase vulnerability to certain types of attacks. Diversifying server components can enhance overall 
+system security.
