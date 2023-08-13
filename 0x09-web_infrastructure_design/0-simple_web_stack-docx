@@ -1,0 +1,40 @@
+One-server web infrastructure for www.foobar.com consists of a single server, running Nginx as the web server,
+an application server to process dynamic content, and a MySQL database for data storage. 
+
+1.	User wanting to access the website (www.foobar.com):
+When a user wants to access the website, they will enter "www.foobar.com" in their web browser.
+
+2.	Server: A server is a computer system that hosts the website and responds to user requests.
+In this case, one server is responsible for handling all incoming requests.
+
+3.	Domain Name:  The domain name "www.foobar.com" is the address used to identify and locate the website on the internet. 
+It acts as a human-readable name for the server's IP address (e.g., 8.8.8.8).
+
+4.	DNS Record: The "www" in www.foobar.com is a DNS (Domain Name System) record known as a subdomain.
+It points to a specific resource on the server, which, in this case, is the website.
+
+5.	Web Server (Nginx): The web server (Nginx) is responsible for processing and fulfilling incoming HTTP requests from users. 
+It serves static content and forwards dynamic content requests to the application server.
+
+6.	Application Server: The application server processes dynamic content and executes the server-side code
+(e.g., PHP, Python, etc.). It interacts with the database to fetch or store data requested by users.
+
+7.	Application Files: The application files are the code base of the website, written in a programming language like PHP or Python. 
+These files reside on the server and contain the logic to generate dynamic content.
+
+8.	Database (MySQL): The database stores and manages the website's data. It allows the application server to
+store and retrieve information as required by the website.
+
+9.	Communication with the User's Computer: The server uses the HTTP protocol to communicate with the user's computer.
+When a user requests a web page, the server sends back the appropriate HTML, CSS, and JavaScript files, which the user's browser then renders as a webpage.
+
+Issues with the Infrastructure:
+
+1.	Single Point of Failure (SPOF): Since there is only one server, if it goes down or encounters issues,
+the entire website will be inaccessible. There is no redundancy to handle incoming traffic if the server fails.
+
+2.	Downtime during Maintenance: When performing maintenance, such as deploying new code or updating the web server,
+the website may experience downtime, resulting in unavailability for users during that period.
+
+3.	Scalability Limitations: With only one server, handling a significant increase in incoming traffic becomes challenging. 
+The infrastructure lacks the ability to scale and accommodate high traffic volumes efficiently.
