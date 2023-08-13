@@ -1,0 +1,36 @@
+A user wants to access my website hosted at www.foobar.com. To ensure high availability and handle increasing traffic,
+I've designed a three-server web infrastructure. 
+1.	Servers: The infrastructure includes three servers to distribute the load and improve performance.
+2.	Web Server (Nginx): Nginx acts as the web server, handling incoming requests from users and serving static
+content efficiently.
+3.	Application Server: The application server handles dynamic content processing,
+such as executing code and generating responses.
+4.	Load Balancer (HAproxy): The load balancer, HAproxy,
+is added to distribute incoming traffic across the three servers evenly.
+It uses a round-robin distribution algorithm, sending requests to each server sequentially, 
+ensuring a balanced load distribution.
+5.	Application Files: The set of application files contains my code base,
+which will be executed by the application server to generate dynamic content.
+6.	Database (MySQL): A MySQL database is included to store and manage website data. 
+It operates as a Primary-Replica (Master-Slave) cluster.
+
+Specifics:
+1.	Load Balancer: The HAproxy is configured with a round-robin distribution algorithm to distribute incoming 
+requests sequentially to each server.
+2.	Load Balancer Setup: The setup enables an Active-Active configuration.
+In this setup, all servers actively serve traffic,
+sharing the load and ensuring high availability. If one server becomes unavailable, 
+the other servers continue to handle the traffic.
+3.	Primary-Replica (Master-Slave) Database Cluster: The database operates with one Primary node and two Replica nodes.
+The Primary node is the master and handles write operations.
+The Replica nodes are slaves and replicate data from the Primary node, handling read operations.
+This setup ensures data redundancy and better-read performance.
+
+Issues:
+1.	Single Point of Failure (SPOF): The setup is still prone to SPOF as there is only one load balancer.
+If the load balancer fails, the entire system may be affected.
+2.	Security Issues: There are no firewalls or HTTPS configurations mentioned in this infrastructure,
+potentially exposing it to security vulnerabilities.
+3.	Monitoring: Lack of monitoring tools and practices could make it challenging to identify and address performance or
+security issues proactively.
+Three-server web infrastructure with a load balancer and database cluster provides better scalability and availability than a single-server setup.
