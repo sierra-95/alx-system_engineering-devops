@@ -39,7 +39,7 @@ frontend http
     default_backend web-backend
 
 frontend www-https
-    bind *:443 ssl crt /etc/haproxy/ssl/Holb20233m8xq2.tech.pem
+    bind *:443 ssl crt /etc/letsencrypt/live/www.holb20233m8xq2.tech/fullchain.pem 
     reqadd X-Forwarded-Proto:\ https
     default_backend web-backend
 
