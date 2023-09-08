@@ -42,8 +42,8 @@ frontend http
 backend web-backend
 	redirect scheme https if !{ ssl_fc }
 	balance roundrobin
-	server 837-web-01 35.237.80.55:80 check
-	server 837-web-02 35.231.185.233:80 check
+	server 837-web-01 3.94.185.2:80 check
+	server 837-web-02 100.26.132.107.233:80 check
 
 frontend www-https
 	  bind *:443 ssl crt /etc/haproxy/ssl/www.karenherrera.tech.pem
